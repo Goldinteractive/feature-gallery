@@ -6819,7 +6819,7 @@ exports.clearImmediate = clearImmediate;
             // parse real index when custom PIDs are used
             // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
             while (i--) {
-              if (items[i].pid == index) {
+              if (this.items[i].pid == index) {
                 options.index = i;
                 break;
               }

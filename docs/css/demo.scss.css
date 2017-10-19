@@ -670,14 +670,14 @@ a.pswp__share--download:hover {
 .pswp--minimal--dark .pswp__top-bar {
   background: none; }
 
-[data-pswp] .pswp__preloader--active .pswp__preloader__icn {
+.pswp[data-pswp] .pswp__preloader--active .pswp__preloader__icn {
   background: inline("features/gallery/preloader.gif") 0 0 no-repeat; }
-[data-pswp] .pswp__button,
-[data-pswp] .pswp__button--arrow--left:before,
-[data-pswp] .pswp__button--arrow--right:before {
+.pswp[data-pswp] .pswp__button,
+.pswp[data-pswp] .pswp__button--arrow--left:before,
+.pswp[data-pswp] .pswp__button--arrow--right:before {
   background-image: inline("features/gallery/default-skin.svg"); }
-[data-pswp] .pswp__button--arrow--left,
-[data-pswp] .pswp__button--arrow--right {
+.pswp[data-pswp] .pswp__button--arrow--left,
+.pswp[data-pswp] .pswp__button--arrow--right {
   background: none; }
 
 .ft-gallery {

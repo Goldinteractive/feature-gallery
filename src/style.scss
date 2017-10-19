@@ -1,7 +1,7 @@
 @import 'photoswipe/src/css/main';
 @import 'photoswipe/src/css/default-skin/default-skin';
 
-[data-pswp] {
+.pswp[data-pswp] {
   .pswp__preloader--active {
     .pswp__preloader__icn {
       background: inline('features/gallery/preloader.gif') 0 0 no-repeat;
