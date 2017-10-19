@@ -6943,6 +6943,7 @@ exports.clearImmediate = clearImmediate;
     arrowEl: true,
     preloaderEl: true,
     bgOpacity: 0.9,
+    showHideOpacity: true,
     getThumbBoundsFn: function getThumbBoundsFn(index) {
       var $thumbnail = this.items[index].elements.$thumbnail;
       var rect = $thumbnail.getBoundingClientRect();

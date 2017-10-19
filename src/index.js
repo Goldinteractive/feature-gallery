@@ -164,6 +164,7 @@ Gallery.defaultOptions = {
   arrowEl: true,
   preloaderEl: true,
   bgOpacity: 0.9,
+  showHideOpacity: true,
   getThumbBoundsFn: function(index) {
     let $thumbnail = this.items[index].elements.$thumbnail
     let rect = $thumbnail.getBoundingClientRect()
