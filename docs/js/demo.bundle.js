@@ -6765,6 +6765,7 @@ exports.clearImmediate = clearImmediate;
   var SELECTOR_CAPTION = '[data-caption]';
 
   var ATTR_PSWP_UID = 'data-pswp-uid';
+  var ATTR_FIGURE_INDEX = 'data-figure-index';
 
   /**
    * Gallery feature class.
@@ -6848,12 +6849,14 @@ exports.clearImmediate = clearImmediate;
         this.items = [];
         this.$$figures = this.$$(SELECTOR_FIGURE);
 
-        this.$$figures.forEach(function ($figure) {
+        this.$$figures.forEach(function ($figure, index) {
           var $source = base.utils.dom.$(SELECTOR_SOURCE, $figure);
           var $width = base.utils.dom.$(SELECTOR_WIDTH, $figure);
           var $height = base.utils.dom.$(SELECTOR_HEIGHT, $figure);
           var $thumbnail = base.utils.dom.$(SELECTOR_THUMBNAIL, $figure);
           var $caption = base.utils.dom.$(SELECTOR_CAPTION, $figure);
+
+          $figure.setAttribute(ATTR_FIGURE_INDEX, index);
 
           var item = {
             src: $source.getAttribute('href'),
@@ -6910,8 +6913,7 @@ exports.clearImmediate = clearImmediate;
             return;
           }
 
-          var index = base.utils.dom.index($clickedListItem);
-          _this3.open(index);
+          _this3.open($clickedListItem.getAttribute(ATTR_FIGURE_INDEX));
         };
       }
     }, {

@@ -12,6 +12,7 @@ const SELECTOR_THUMBNAIL = '[data-thumbnail]'
 const SELECTOR_CAPTION = '[data-caption]'
 
 const ATTR_PSWP_UID = 'data-pswp-uid'
+const ATTR_FIGURE_INDEX = 'data-figure-index'
 
 /**
  * Gallery feature class.
@@ -77,12 +78,14 @@ class Gallery extends base.features.Feature {
     this.items = []
     this.$$figures = this.$$(SELECTOR_FIGURE)
 
-    this.$$figures.forEach(($figure) => {
+    this.$$figures.forEach(($figure, index) => {
       let $source = base.utils.dom.$(SELECTOR_SOURCE, $figure)
       let $width = base.utils.dom.$(SELECTOR_WIDTH, $figure)
       let $height = base.utils.dom.$(SELECTOR_HEIGHT, $figure)
       let $thumbnail = base.utils.dom.$(SELECTOR_THUMBNAIL, $figure)
       let $caption = base.utils.dom.$(SELECTOR_CAPTION, $figure)
+
+      $figure.setAttribute(ATTR_FIGURE_INDEX, index)
 
       let item = {
         src: $source.getAttribute('href'),
@@ -134,8 +137,7 @@ class Gallery extends base.features.Feature {
         return
       }
 
-      let index = base.utils.dom.index($clickedListItem)
-      this.open(index)
+      this.open($clickedListItem.getAttribute(ATTR_FIGURE_INDEX))
     }
   }
 

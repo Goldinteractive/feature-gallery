@@ -680,6 +680,10 @@ a.pswp__share--download:hover {
 .pswp[data-pswp] .pswp__button--arrow--right {
   background: none; }
 
+.ft-gallery .source {
+  position: relative;
+  display: block; }
+
 .ft-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -689,8 +693,6 @@ a.pswp__share--download:hover {
   flex-grow: 1; }
 
 .source {
-  position: relative;
-  display: block;
   height: 200px;
   min-width: 200px; }
 
